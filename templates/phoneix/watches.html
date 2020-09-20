@@ -1,0 +1,47 @@
+
+{% extends "shared/base.html" %}
+{% load static %}
+
+{% block title %}
+  Watchespage
+{% endblock title %}
+
+
+{% block main %}
+  <section>
+    <div class="glassesdiv1">
+      <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolorum sequi veritatis</h5>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint numquam vel ad sapiente? Corrupti nulla voluptatum excepturi mollitia distinctio praesentium saepe corporis! Aut nostrum cumque nisi, neque, architecto delectus doloremque est aperiam ipsum illum tempore repellat iure. Recusandae repudiandae assumenda magni reprehenderit. Esse, iure doloremque.</p>
+    </div>
+    <div class="glassesdiv2">
+      <div class="glassesdiv2_1">
+        <h4><u>CATEGORY</u></h4>
+        <br>
+        <h5><a style="color: black;" href="{% url 'glasses' %}">Glasses</a></h5><br> 
+        <h5><a href="{% url 'watches' %}">Watches</a></h5><br><br>
+        <h4><u>Discount Percentage</u></h4>
+        <h5>Less than 50%</h5>
+        <h5>Less than 40%</h5>
+        <h5>Less than 30%</h5>
+        <h5>Less than 20%</h5>
+        <h5>Less than 10%</h5>
+      </div>
+      <div class="glassesdiv2_2">
+        <div class="justnow">
+          {% for items in watch %}
+            <div class="imsd4_2">
+              <div id="productimageandprice">
+                <img width="250px" height="250px" id="productimage" src="{{items.main_img.url}}" alt="">
+                <h4 id="price">{{items.pwithd}}</h4>
+              </div>
+              <h4>{{items.name}}</h4>
+              
+              <a href="{% url 'watch' %}">Buy Now</a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock main %}

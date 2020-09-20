@@ -1,0 +1,36 @@
+
+
+{% extends "shared/base.html" %}
+{% load static %}
+
+{% block title %}
+  Log_in page
+{% endblock title %}
+
+
+{% block main %}
+
+  <div class="regform">
+  </br>
+    <h1 class="topsheet">LOGIN SHEET</h1></br></br>
+    <!-- {% if form %}
+      <p>invalid username/password</p>
+    {% endif %}
+    {% if next %}
+      <p>You need to login to access this page</p>
+    {% endif %} -->
+
+    <form action="{% url 'login' %}" method="POST">
+      {% csrf_token %}
+      <p>Username: {{form.username}}</p></br>
+      <p>Password: {{form.password}}</p></br>
+      <p>
+        <input class="btn boto btn-success" type="submit" value="Login">
+        <input type="hidden" name="next" value="{{next}}">
+      </p>
+    </form>
+
+  </div>
+
+
+{% endblock main %}

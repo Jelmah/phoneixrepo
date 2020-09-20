@@ -1,0 +1,42 @@
+#header{
+    background-color: aqua;
+    color: #000;
+}
+#header #head{
+    color: black;
+}
+#user-tools,#user-tools a{
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}
+#header a:link, #header a:visited{
+    color: black;
+}
+#user-tools #text, #user-tools strong{
+    font-size: 21px;
+} 
+h1{
+    font-size: 25px;
+    font-weight: bold;
+}
+.module caption, .inline-group h2,.module caption a{
+    background-color: aquamarine;
+}
+a.section:link, a.section:visited{
+    color: black;
+    font-weight: bold;
+}
+div.breadcrumbs, div.breadcrumbs a{
+    background-color: aquamarine;
+    color: black;
+}
+input[type=submit].default, .submit-row input.default, .button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background-color: aqua;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+

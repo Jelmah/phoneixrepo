@@ -1,0 +1,21 @@
+
+
+{% extends "shared/base.html" %}
+{% load static %}
+
+{% block title %}
+  Register page
+{% endblock title %}
+
+
+{% block main %}
+    <div class="regform">
+        <h1 class="topsheet">Sign Up</h1>
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn boto btn-success">Register</button>
+        </form>
+    </div>
+
+{% endblock main %}

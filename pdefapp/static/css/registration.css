@@ -1,0 +1,22 @@
+
+.regform{
+    width: 50%;
+    margin: 25px auto;
+    height: 570px;
+    border: 1px solid #000;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: rgb(162, 201, 202);
+    border-radius: 25px;
+}
+.topsheet{
+    text-align: center;
+    font-weight: bold;
+}
+.boto{
+    margin-left: 350px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 20%;
+    border-bottom: black solid 4px;
+}

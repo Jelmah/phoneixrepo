@@ -1,0 +1,91 @@
+
+{% extends "shared/base.html" %}
+{% load static %}
+
+{% block title %}
+  contactpage
+{% endblock title %}
+
+
+{% block main %}
+  <section style="width: 80%; margin: 0 auto;">
+    
+    <div class="contact" style="padding: 25px 50px; background-color: rgb(14, 12, 12); text-align: center;">
+      <div class="contact_us" style="padding: 20px 20px; background-color: blueviolet;">
+        <h1 style="color: aqua;">CONTACT US</h1>
+      </div>
+    </div>
+    <div class="help" style="text-align: center; padding-bottom: 20px;">
+      <h1>How can we help you ? </h1>
+    </div>
+
+    <section style="display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 40px;">
+      <div class="question">
+        <center>
+          <h3>Find the most frequently asked questions</h3>
+        </center>
+          <center>
+            <div class="questioncontact" style="display: grid; grid-template-columns: 1fr 1fr; padding: 10px 0px; margin-top: 35px;">
+              <a href="" style="margin: 0px 40px 15px; padding: 15px 0px; text-decoration: none; border-radius: 20px; background-color: blueviolet;"><h3>Track My Order</h3></a>
+              <a href="" style="margin: 0px 40px 15px; padding: 15px 0px; text-decoration: none; border-radius: 20px; background-color: blueviolet;"><h3>Track My Order</h3></a>
+              <a href="" style="margin: 0px 40px; padding: 15px 0px; text-decoration: none; border-radius: 20px; background-color: blueviolet;"><h3>Track My Order</h3></a>
+              <a href="" style="margin: 0px 40px; padding: 15px 0px; text-decoration: none; border-radius: 20px; background-color: blueviolet;"><h3>Track My Order</h3></a>
+          </center>
+        </div>
+      </div>
+      <div class="atm">
+        <h5>For your payment security DO NOT share your Card details with anyone. For confirmation purposes, only the first 6 numbers and last 4 numbers of the card can be shared. NEVER share your Expiry Date or CVV number.</h5>
+        <center><img width="600px" src="{% static 'images/atm_yes.jpg' %}" alt="logo"></center>
+      </div>
+    </section>
+
+    <div class="stillineed">
+      <center>      <h1>Still Need Help ?</h1>
+        <h4>Send us your request using the online form opposite and we will get back to you within 2 working days.</h4></center>
+<br><br>    
+    </div>
+
+    <section>
+      <form action="" method="post" style="border: 1px solid blueviolet ;">
+        {% csrf_token %}
+        <div style="display: grid;grid-template-columns: 1fr 1fr;">
+          <input style="margin: 15px; height: 55px;" type="text" name="" id="" placeholder="Enter Your Name">
+          <input style="margin: 15px; height: 55px;" type="text" name="" id="" placeholder="Enter Your Email">
+        </div>
+        <div style="display: grid;grid-template-columns: 1fr 1fr;">
+          <input style="margin: 15px; height: 55px;" type="text" name="" id="" placeholder="Enter Your Phone Number">
+          <input style="margin: 15px; height: 55px;" type="text" name="" id="" placeholder="Enter Your Order Number">
+        </div>
+        <select name="" id="" style="height: 55px; width: 97.8%; margin: 15px;">
+          <option value="">Select an Option</option>
+          <option value="">I want to confirm my order</option>
+          <option value="">I want to track my order</option>
+          <option value="">I want to cancel my order</option>
+        </select><br>
+        <input style="height: 55px; width: 97.8%; margin: 15px;" type="text" name="" id="" placeholder="For return and cancellation, please enter your bank details">
+
+        
+        <center>
+          <div >
+            <h1 style="padding: 15px; border: blueviolet solid 1px; margin:0 300px; text-align: center;"></h1>
+            <h3>I am not a Robot</h3>
+            <h1>re<span>CAPTCHA</span></h1>
+          </div>
+  
+        </center>
+        <center>
+          <button style="padding: 15px 30px;background-color: blueviolet; font-size: 20px; font-weight: bold;border-radius: 20px; ">Submit</button><br><br>
+        </center>
+      </form><br><br>
+        <section>
+          <center>
+            <h2 style="color: blueviolet;">CUSTOMER SERVICE</h2><br><br>
+            <h4>08118236545</h4>
+            <h4>Monday, 8:30am - 5:00pm; Tues-Thurs, 8am - 5:00pm; Friday, 8am - 4:00pm; Saturdays, Sundays & Public Holidays, CLOSED.</h4>
+          </center>
+        </section>
+      
+    </section>
+
+  </section><br><br><br><br>
+{% endblock main %}

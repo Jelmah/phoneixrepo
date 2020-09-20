@@ -1,0 +1,89 @@
+
+{% extends "shared/base.html" %}
+{% load static %}
+
+{% block title %}
+  indexpage
+{% endblock title %}
+
+
+{% block main %}
+  <section>
+    <div class="imsd1">
+      <img width="1686" height="420" src="{% static 'images/banner1.png' %}" alt="">
+    </div>
+    <div class="imsd2">
+      <div>
+        <img width="50" src="{% static 'images/hex11.jpg' %}" alt="">
+        <h4>Best Deal</h4>
+      </div>
+      <div>
+        <img width="50" src="{% static 'images/hex12.jpg' %}" alt="">
+        <h4>New In</h4>
+      </div>
+      <div>
+        <img width="50" src="{% static 'images/hex13.jpg' %}" alt="">
+        <h4>Shop Brands</h4>
+      </div>
+      <div>
+        <img width="50" src="{% static 'images/hex14.jpg' %}" alt="">
+        <h4>Best Seller</h4>
+      </div>
+    </div>
+
+    <div class="imsd4">
+      <section class="secimsd4">
+        <div class="imsd4_1">
+          <h4>Sun Shade Glasses</h4>
+          <h4><a  style="color: white; text-decoration: none;" href="{% url 'glasses' %}">See all  > </a></h4>
+        </div>
+        <div class="justnow">
+          {% for items in glass %}
+            <div class="imsd4_2">
+              <div id="productimageandprice">
+                <img width="200px" height="200px" id="productimage" src="{{items.main_img.url}}" alt="">
+                <h4 id="price">{{items.pwithd}}</h4>
+              </div>
+              <h4>{{items.name}}</h4>
+              <p>{{items.description}}</p>
+              <a href="{% url 'glass' prodname=items.name %}">Product Info ...</a>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+        
+      <section class="secimsd4">
+        <div class="imsd4_1">
+          <h4>New Branded Wrist Watch</h4>
+          <h4><a  style="color: white; text-decoration: none;" href="{% url 'watches' %}">See all  > </a></h4>
+        </div>
+        <div class="justnow">
+          {% for items in watch %}
+            <div class="imsd4_2">
+              <div id="productimageandprice">
+                <img width="200px" height="200px" id="productimage" src="{{items.main_img.url}}" alt="">
+                <h4 id="price">{{items.pwithd}}</h4>
+              </div>
+              <h4>{{items.name}}</h4>
+              <p>{{items.description}}</p>
+              <a href="{% url 'watch' id=items.id %}">Product Info ...</a>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="imsd5">
+      <h3>Lorem ipsum dolor sit amet consectetur, adipisicing Cum!</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, neque dolorem. Harum nobis itaque debitis distinctio nam vitae architecto quo ea molestiae sint soluta fugiat dolores non, facere sapiente eligendi quidem nemo nulla adipisci suscipit? Ipsa alias quas, tenetur voluptatum, pariatur eveniet quasi perferendis incidunt reprehenderit nam enim recusandae, obcaecati temporibus quod neque at nostrum rem modi! Deleniti, vel doloribus alias perferendis quas officia cumque non dolor! Omnis ea, soluta accusamus aspernatur, cum sapiente sunt exercitationem vitae quidem recusandae odio repellendus iste odit quisquam perferendis incidunt dolore ullam facere. Eos porro explicabo nam labore impedit magni sapiente a? Debitis vitae unde dignissimos explicabo quos autem asperiores nisi, perspiciatis sunt, quod molestias eum vero architecto neque adipisci pariatur eveniet consequuntur ipsa fugit sed, ipsum odit veritatis et minima. Nisi dolorem veritatis quas veniam. Voluptatibus vel officia odio cupiditate sit ex exercitationem amet eligendi deleniti esse perferendis rem quo illum ducimus debitis provident veniam quidem, eaque pariatur assumenda quas, accusantium molestiae quam. Architecto iure laudantium inventore minus dicta quod nemo dignissimos odit obcaecati officia impedit saepe, omnis corporis possimus excepturi facilis corrupti! Dolore reprehenderit praesentium quis. Sequi, mollitia? Impedit, minima. Autem, sed dolor sit nemo, inventore veniam fuga omnis dolore possimus molestias, impedit quae nisi. Sit deserunt voluptatibus ut facilis atque perferendis quasi inventore nihil ex, reprehenderit placeat est voluptates, quaerat ipsam consequatur optio recusandae nulla? Nihil, totam reprehenderit non modi expedita ratione aperiam quos fugit sint unde asperiores harum sequi nesciunt, fugiat rerum? Assumenda earum sunt eaque tempore! Quaerat cum qui unde quam ad eligendi eius reprehenderit aperiam totam molestias magnam earum voluptate minus est voluptas, molestiae, quia dolorem perspiciatis officia ipsa nulla voluptatibus enim placeat architecto. Reiciendis totam, laudantium deleniti officiis incidunt natus, aperiam ea ad ipsum praesentium alias sequi unde sunt repudiandae accusantium similique ratione, voluptatibus asperiores cupiditate amet. Mollitia perferendis quas nemo voluptatum fugit corporis neque architecto at, dolores deleniti nisi ut, delectus, fuga nihil. Explicabo fuga, corrupti culpa magni itaque provident veniam voluptas id voluptatem nostrum molestiae possimus ipsa odit perspiciatis quidem est molestias recusandae reprehenderit ullam sed vero, at quos velit! Exercitationem hic aliquid distinctio nesciunt amet enim numquam tempora, veritatis dolorem placeat veniam repellat deleniti a minima debitis repellendus voluptas reiciendis nostrum? Repudiandae doloremque tenetur saepe voluptate asperiores soluta voluptas delectus quibusdam pariatur, quaerat harum.</p>
+    </div>
+  </section>
+{% endblock main %}
