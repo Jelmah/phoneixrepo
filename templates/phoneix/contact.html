@@ -46,7 +46,7 @@
     </div>
 
     <section>
-      <form action="" method="post" style="border: 1px solid blueviolet ;">
+      <form action="{% url 'contact' %}" method="post" style="border: 1px solid blueviolet ;">
         {% csrf_token %}
         <div style="display: grid;grid-template-columns: 1fr 1fr;">
           <input style="margin: 15px; height: 55px;" type="text" name="" id="" placeholder="Enter Your Name">

@@ -21,6 +21,8 @@ def index(request):
 
 
 def contact(request):
+    # if request.method == 'POST'
+    # contactpost = request.POST.get('contactpost')
     
     return render(request, 'phoneix/contact.html')
 
