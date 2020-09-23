@@ -47,22 +47,22 @@
 
     <section>
       <form action="{% url 'contact' %}" method="post" style="border: 1px solid blueviolet ;">
-        {% csrf_token %}
+        
         <div style="display: grid;grid-template-columns: 1fr 1fr;">
-          <input style="margin: 15px; height: 55px;" type="text" name="" id="" placeholder="Enter Your Name">
-          <input style="margin: 15px; height: 55px;" type="text" name="" id="" placeholder="Enter Your Email">
+          <input style="margin: 15px; height: 55px;" type="text" name="name" id="" placeholder="Enter Your Name">
+          <input style="margin: 15px; height: 55px;" type="text" name="email" id="" placeholder="Enter Your Email">
         </div>
         <div style="display: grid;grid-template-columns: 1fr 1fr;">
-          <input style="margin: 15px; height: 55px;" type="text" name="" id="" placeholder="Enter Your Phone Number">
-          <input style="margin: 15px; height: 55px;" type="text" name="" id="" placeholder="Enter Your Order Number">
+          <input style="margin: 15px; height: 55px;" type="text" name="number" id="" placeholder="Enter Your Phone Number">
+          <input style="margin: 15px; height: 55px;" type="text" name="order" id="" placeholder="Enter Your Order Number">
         </div>
-        <select name="" id="" style="height: 55px; width: 97.8%; margin: 15px;">
+        <select name="select" id="" style="height: 55px; width: 97.8%; margin: 15px;">
           <option value="">Select an Option</option>
           <option value="">I want to confirm my order</option>
           <option value="">I want to track my order</option>
           <option value="">I want to cancel my order</option>
         </select><br>
-        <input style="height: 55px; width: 97.8%; margin: 15px;" type="text" name="" id="" placeholder="For return and cancellation, please enter your bank details">
+        <input style="height: 55px; width: 97.8%; margin: 15px;" type="text" name="cancel" id="" placeholder="For return and cancellation, please enter your bank details">
 
         
         <center>

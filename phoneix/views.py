@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import Glasse,Watche
+from .models import Glasse,Watche,Contactinfo
 from .forms import UserRegisterForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 
 
 
@@ -19,11 +20,19 @@ def index(request):
     }
     return render(request, 'phoneix/index.html', context)
 
-
+@csrf_exempt
 def contact(request):
-    # if request.method == 'POST'
-    # contactpost = request.POST.get('contactpost')
-    
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        number = request.POST['number']
+        select = request.POST['select']
+        order = request.POST['order']
+        cancel = request.POST['cancel']
+
+        contactinfo = Contactinfo(name=name,email=email,number=number,order=order,select=select,cancel=cancel)
+        contactinfo.save()
+        
     return render(request, 'phoneix/contact.html')
 
 
