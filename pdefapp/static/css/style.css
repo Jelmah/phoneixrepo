@@ -89,9 +89,21 @@ header{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-
-
-
+.imsd1{
+    background-image: url(../images/banner11.png);
+    padding: 90px 200px; 
+    min-height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/* .banner {
+    background-image: url(../images/banner2.jpg);
+    padding: 90px 200px;
+    min-height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
 
 
 

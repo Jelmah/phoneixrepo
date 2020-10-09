@@ -37,7 +37,7 @@
           
       {% if request.user.is_authenticated %}
       <li class="nav-item active">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="" style="font-size: 14px; padding-top: 15px;">
           Dear {{request.user.username}}, Welcome to your Dashboard <span class="sr-only">(current)</span>
         </a>
       </li>
@@ -56,7 +56,10 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'logout' %}">Cart</a>
+        <a class="nav-link" href="{% url 'cart' %}">Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
       </li>
       
       {% else %}
@@ -64,17 +67,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'contact' %}">Contact</a>
       </li>
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Products
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'glasses' %}">Glasses</a>
-          <a class="dropdown-item" href="{% url 'watches' %}">Watches</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'index' %}">Other Products from Jelmah</a>
-        </div>
-      </li> -->
+
       <li class="nav-item">
         <a class="nav-link" href="{% url 'login' %}">Log In</a>
       </li>
@@ -86,8 +79,8 @@
       
 
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search' %}">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keysearch">
       <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>

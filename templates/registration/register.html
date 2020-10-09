@@ -9,7 +9,13 @@
 
 
 {% block main %}
+
     <div class="regform">
+    {% if messages %}
+        {% for item in messages %}
+          <p style="background-color: aqua; color: orangered; justify-self: center; margin-right: 15px;">{{ item }}</p>
+        {% endfor %}
+    {% endif %}
         <h1 class="topsheet">Sign Up</h1>
         <form action="{% url 'register' %}" method="post">
             {% csrf_token %}

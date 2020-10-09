@@ -1,3 +1,4 @@
+
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import Glasse,Watche,Contactinfo
 from .forms import UserRegisterForm
@@ -11,8 +12,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
-    glass = Glasse.objects.all()
-    watch = Watche.objects.all()
+    glass = Glasse.objects.all().filter()[:3]
+    watch = Watche.objects.all()[:3]
 
     context ={
         'glass': glass,
@@ -37,10 +38,10 @@ def contact(request):
 
 
 def glasses(request):
-    glass = Glasse.objects.all()
+    glassgla = Glasse.objects.all()
 
     context ={
-        'glass': glass,
+        'glassgla': glassgla,
     }
     return render(request, 'phoneix/glasses.html', context)
 
@@ -80,14 +81,15 @@ def register(request):
     if request.method=='POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            username=form.cleaned_data.get('username')
-            password=form.cleaned_data.get('password1')
-            user = authenticate(username=username,password=password)
-            login(request,user)
+            messages.success(request, 'Your registration is successful')
+            # form.save()
+            # username=form.cleaned_data.get('username')
+            # password=form.cleaned_data.get('password1')
+            # user = authenticate(username=username,password=password)
+            # login(request,user)
             return redirect ('index')
         else:
-            print(form.errors)
+            # print(form.errors)
             messages.error(request,'Something went wrong')
             return redirect('register')
     else:
@@ -98,11 +100,30 @@ def register(request):
     return render(request, 'registration/register.html', context)
 
 
-def logout(request):
-    return render(request, 'registration/logout.html')
+def search(request):
+    queryset_list = Glasse.objects.order_by('-shipin_date')
+    queryset_list2 = Watche.objects.order_by('-shipin_date')
+
+    if 'keysearch' in request.GET:
+        keysearch = request.GET['keysearch']
+        if keysearch :
+            try:
+                queryset_list = queryset_list2.filter(name__icontains=keysearch)
+            except:
+                queryset_list = queryset_list.filter(name__icontains=keysearch)
+    else:
+        print('mi o tiiri nkan kan')
 
 
 
+    context = {
+        'glassgla':queryset_list,
+    }
+    return render(request, 'phoneix/search.html', context)
+
+
+def cart(request):
+    return render (request, 'phoneix/cart.html')
 
 
 

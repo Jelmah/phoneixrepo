@@ -11,15 +11,22 @@
 {% block main %}
 
   <div class="regform">
+    {% if messages %}
+        {% for item in messages %}
+          <p style="background-color: aqua; color: orangered; justify-self: center;">{{ item }}</p>
+        {% endfor %}
+    {% endif %}
   </br>
     <h1 class="topsheet">LOGIN SHEET</h1></br></br>
-    <!-- {% if form %}
-      <p>invalid username/password</p>
-    {% endif %}
-    {% if next %}
-      <p>You need to login to access this page</p>
-    {% endif %} -->
-
+            {% comment %} to be commented
+            {% if messages %}
+              <p>invalid username/password</p>
+            {% endif %}
+            {% if next %}
+              <p>You need to login to access this page</p>
+            {% endif %}
+            to be commented {% endcomment %}
+            
     <form action="{% url 'login' %}" method="POST">
       {% csrf_token %}
       <p>Username: {{form.username}}</p></br>

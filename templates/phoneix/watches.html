@@ -37,7 +37,7 @@
               </div>
               <h4>{{items.name}}</h4>
               
-              <a href="{% url 'watch' %}">Buy Now</a>
+              <a href="{% url 'watch' id=items.id %}">Buy Now</a>
             </div>
           {% endfor %}
         </div>

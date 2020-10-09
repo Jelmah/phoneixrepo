@@ -9,5 +9,37 @@
 
 
 {% block main %}
-
+<section style="width: 70%; margin: 0 auto;background-color: grey;">
+    <h2>Cart (Number of items in Cart)</h2>
+    <section style="display: grid; grid-template-columns: 5fr 1fr 2fr 2fr; background-color: white;">
+      <div class="tablegrids" style="padding: 3px; border: 2px solid grey;">
+        <h3 class="item">Item</h3>
+        <div class="itemcontent">
+          <img src="" alt="prodimage">
+        <h4>Seller: </h4>
+        <h5>Name of Product</h5>
+        <h5><button>Remove from cart</button></h5>
+        </div>
+      </div>
+      <div class="tablegrids" style="padding: 3px; border: 2px solid grey;">
+        <h3 class="item">Quantity</h3>
+        <div class="itemcontent">
+        <h4>4</h4>
+        </div>
+      </div>
+      <div class="tablegrids" style="padding: 3px; border: 2px solid grey;">
+        <h3 class="item">Price in Naira(#)</h3>
+        <div class="itemcontent">
+        <h4>300,000</h4>
+        </div>
+      </div>
+      <div class="tablegrids" style="padding: 3px; border: 2px solid grey;">
+        <h3 class="item">Subtotal</h3>
+        <div class="itemcontent">
+        <h4>1,200,000</h4>
+        <h5></h5>
+        </div>
+      </div>
+    </section>
+</section>
 {% endblock main %}

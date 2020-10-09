@@ -29,7 +29,7 @@
       </div>
       <div class="glassesdiv2_2">
         <div class="justnow">
-          {% for items in glass %}
+          {% for items in glassgla %}
             <div class="imsd4_2">
               <div id="productimageandprice">
                 <img width="250px" height="200px" id="productimage" src="{{items.main_img.url}}" alt="">
@@ -37,7 +37,7 @@
               </div>
               <h4>{{items.name}}</h4>
               
-              <a href="{% url 'watch' %}">Buy Now</a>
+              <a href="{% url 'glass' prodname=items.name %}">Buy Now</a>
             </div>
           {% endfor %}
         </div>
